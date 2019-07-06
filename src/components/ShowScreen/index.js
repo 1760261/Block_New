@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet, FlatList, Dimensions } from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  FlatList,
+  Dimensions,
+  TouchableOpacity,
+} from 'react-native';
 import ImageCardView from '@Component/ImageCardView';
 import ScreenInforView from '@Component/ScreenInforView';
 import { Icon } from 'native-base';
@@ -24,9 +32,7 @@ class FlatListItem extends Component {
 class ShowAvatarIcon extends Component {
   render() {
     let newCount = 0;
-    // for (let i = 0; i < FlatListData.length; i++) {
-    //   newCount = newCount + 1;
-    // }
+
     if (FlatListData.length > 5) {
       newCount = FlatListData.length - 5;
     }
@@ -48,7 +54,6 @@ class ShowAvatarIcon extends Component {
           renderItem={({ item, index }) => {
             return <FlatListItem item={item} index={index} />;
           }}
-          // }}
         />
         <Text style={{ paddingTop: 7 }}> + {newCount}</Text>
       </View>
@@ -63,21 +68,27 @@ class ShowIconReact extends Component {
         style={{
           flexDirection: 'row',
         }}>
-        <Icon
-          name="like2"
-          type="AntDesign"
-          style={{
-            marginRight: 20,
-          }}
-        />
-        <Icon
-          name="comment-processing-outline"
-          type="MaterialCommunityIcons"
-          style={{
-            marginRight: 20,
-          }}
-        />
-        <Icon name="share" type="MaterialIcons" />
+        <TouchableOpacity>
+          <Icon
+            name="like2"
+            type="AntDesign"
+            style={{
+              marginRight: 20,
+            }}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Icon
+            name="comment-processing-outline"
+            type="MaterialCommunityIcons"
+            style={{
+              marginRight: 20,
+            }}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Icon name="share" type="MaterialIcons" />
+        </TouchableOpacity>
       </View>
     );
   }
