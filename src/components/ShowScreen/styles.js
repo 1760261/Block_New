@@ -10,12 +10,12 @@ const styles = StyleSheet.create({
     borderColor: "white"
   },
   Icon: {
-    marginRight: 40,
+    marginRight: 10,
 
     color: "blue"
   },
   Icon2: {
-    marginRight: 40,
+    marginRight: 10,
 
     color: "red"
   }
