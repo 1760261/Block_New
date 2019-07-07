@@ -37,7 +37,7 @@ export class ScreenInfo extends Component {
           <View
             style={{
               flexDirection: 'row',
-              justifyContent: 'space-between',
+              // justifyContent: 'space-between',
               alignItems: 'center',
               marginRight: 15,
               left: 10,
@@ -50,7 +50,7 @@ export class ScreenInfo extends Component {
               }}
               source={require('@Asset/images/imgA.png')}
             />
-            <View style={{ marginLeft: -10 }}>
+            <View style={{ marginLeft: 20 }}>
               <Text style={styles.Name}> {this.props.name}</Text>
               <Text style={styles.Day}> {this.props.day}</Text>
             </View>
