@@ -1,24 +1,20 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   Avatar: {
     width: 24,
     height: 24,
-    overflow: "hidden",
+    overflow: 'hidden',
     borderRadius: 12,
     marginLeft: -6,
     borderWidth: 1,
-    borderColor: "white"
+    borderColor: 'white',
   },
   Icon: {
-    marginRight: 10,
-
-    color: "blue"
+    color: 'blue',
   },
   Icon2: {
-    marginRight: 10,
-
-    color: "red"
-  }
+    color: 'red',
+  },
 });
 
 export default styles;

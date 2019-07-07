@@ -5,8 +5,8 @@ const styles = StyleSheet.create({
     // width: Math.round(Dimensions.get("window").width) / 2,
     // height: Math.round(Dimensions.get("window").width) / 2,
 
-    width: 170,
-    height: 170,
+    width: '100%',
+    height: Math.round(Dimensions.get('window').width) / 2 - 10,
     borderRadius: 20,
     top: -10,
     left: -10,

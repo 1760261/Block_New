@@ -7,9 +7,9 @@ const styles = StyleSheet.create({
     // left: 20,
     // borderRadius: 50
   },
-  Name: { left: 20, fontSize: 15, color: '#828282' },
+  Name: { fontSize: 15, color: '#828282' },
   Day: {
-    left: 20,
+    // left: 20,
     fontSize: 12,
     color: '#BDBDBD',
   },

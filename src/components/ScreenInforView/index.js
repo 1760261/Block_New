@@ -31,11 +31,16 @@ export class ScreenInfo extends Component {
         style={{
           flex: 1,
           flexDirection: 'column',
+          justifyContent: 'space-between',
         }}>
         <View>
           <View
             style={{
               flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              marginRight: 15,
+              left: 10,
             }}>
             <Image
               style={{
@@ -51,10 +56,7 @@ export class ScreenInfo extends Component {
             </View>
           </View>
 
-          <View
-            style={{
-              paddingTop: 20,
-            }}>
+          <View style={{ marginTop: 10 }}>
             <Text style={styles.Title}>{this.props.title} </Text>
             <Text style={styles.Detail}>{this.props.detail}</Text>
           </View>

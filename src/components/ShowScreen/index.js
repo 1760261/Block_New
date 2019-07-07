@@ -88,18 +88,14 @@ class ShowIconReact extends Component {
       <View
         style={{
           flexDirection: 'row',
+          justifyContent: 'space-between',
+          right: 25,
         }}>
         <TouchableOpacity onPress={this.ChangStyleColor.bind(this)}>
           <Icon name="like2" type="AntDesign" style={this.state.styles1} />
         </TouchableOpacity>
         <TouchableOpacity>
-          <Icon
-            name="comment-processing-outline"
-            type="MaterialCommunityIcons"
-            style={{
-              marginRight: 20,
-            }}
-          />
+          <Icon name="comment-processing-outline" type="MaterialCommunityIcons" />
         </TouchableOpacity>
         <TouchableOpacity>
           <Icon name="share" type="MaterialIcons" />
@@ -132,6 +128,7 @@ export class index extends Component {
         <View
           style={{
             flexDirection: 'row',
+            justifyContent: 'space-between',
           }}>
           <View
             style={{
