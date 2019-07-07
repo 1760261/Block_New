@@ -111,6 +111,7 @@ export class index extends Component {
       <View
         style={{
           flexDirection: 'column',
+          marginBottom: 10,
         }}>
         <View style={{ paddingTop: 10, flexDirection: 'row' }}>
           <View style={{ flex: 50, marginTop: -10 }}>
@@ -134,7 +135,7 @@ export class index extends Component {
             style={{
               flex: 50,
               paddingTop: 20,
-              marginLeft: 30,
+              marginLeft: 35,
             }}>
             <ShowIconReact />
           </View>
