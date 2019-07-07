@@ -8,6 +8,16 @@ const styles = StyleSheet.create({
     marginLeft: -6,
     borderWidth: 1,
     borderColor: "white"
+  },
+  Icon: {
+    marginRight: 40,
+
+    color: "blue"
+  },
+  Icon2: {
+    marginRight: 40,
+
+    color: "red"
   }
 });
 

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   View,
   Text,
@@ -6,15 +6,15 @@ import {
   StyleSheet,
   FlatList,
   Dimensions,
-  TouchableOpacity,
-} from 'react-native';
-import ImageCardView from '@Component/ImageCardView';
-import ScreenInforView from '@Component/ScreenInforView';
-import { Icon } from 'native-base';
+  TouchableOpacity
+} from "react-native";
+import ImageCardView from "@Component/ImageCardView";
+import ScreenInforView from "@Component/ScreenInforView";
+import { Icon } from "native-base";
 
-import FlatListData from '@Component/ScreenInforView/FlatListData';
-import styles from '@Component/ImageCardView/styles';
-import styless from '@Component/ShowScreen/styles';
+import FlatListData from "@Component/ScreenInforView/FlatListData";
+import styles from "@Component/ImageCardView/styles";
+import styless from "@Component/ShowScreen/styles";
 class FlatListItem extends Component {
   render() {
     return (
@@ -22,7 +22,7 @@ class FlatListItem extends Component {
         <Image
           resizeMode="cover"
           source={this.props.item.Url}
-          style={{ width: '100%', height: '100%' }}
+          style={{ width: "100%", height: "100%" }}
         />
       </View>
     );
@@ -45,8 +45,9 @@ class ShowAvatarIcon extends Component {
       <View
         style={{
           paddingTop: 20,
-          flexDirection: 'row',
-        }}>
+          flexDirection: "row"
+        }}
+      >
         <FlatList
           horizontal
           style={{ margin: 5 }}
@@ -62,27 +63,30 @@ class ShowAvatarIcon extends Component {
 }
 
 class ShowIconReact extends Component {
+  state = {
+    styles1: styless.Icon
+  };
+  ChangStyleColor() {
+    const styles2 = styless.Icon2;
+    return this.setState({ styles1: styles2 });
+  }
+
   render() {
     return (
       <View
         style={{
-          flexDirection: 'row',
-        }}>
-        <TouchableOpacity>
-          <Icon
-            name="like2"
-            type="AntDesign"
-            style={{
-              marginRight: 20,
-            }}
-          />
+          flexDirection: "row"
+        }}
+      >
+        <TouchableOpacity onPress={this.ChangStyleColor.bind(this)}>
+          <Icon name="like2" type="AntDesign" style={this.state.styles1} />
         </TouchableOpacity>
         <TouchableOpacity>
           <Icon
             name="comment-processing-outline"
             type="MaterialCommunityIcons"
             style={{
-              marginRight: 20,
+              marginRight: 20
             }}
           />
         </TouchableOpacity>
@@ -99,9 +103,10 @@ export class index extends Component {
     return (
       <View
         style={{
-          flexDirection: 'column',
-        }}>
-        <View style={{ paddingTop: 10, flexDirection: 'row' }}>
+          flexDirection: "column"
+        }}
+      >
+        <View style={{ paddingTop: 10, flexDirection: "row" }}>
           <View style={{ flex: 50, marginTop: -10 }}>
             <Image source={this.props.IMGS} style={styles.lagreImage} />
           </View>
@@ -116,14 +121,16 @@ export class index extends Component {
         </View>
         <View
           style={{
-            flexDirection: 'row',
-          }}>
+            flexDirection: "row"
+          }}
+        >
           <View
             style={{
               flex: 50,
               paddingTop: 20,
-              marginLeft: 30,
-            }}>
+              marginLeft: 30
+            }}
+          >
             <ShowIconReact />
           </View>
           <View
@@ -131,8 +138,9 @@ export class index extends Component {
               flex: 50,
               paddingBottom: 10,
               paddingRight: 10,
-              flexDirection: 'row',
-            }}>
+              flexDirection: "row"
+            }}
+          >
             <ShowAvatarIcon />
           </View>
         </View>
