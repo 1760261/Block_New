@@ -15,51 +15,43 @@ import { Icon } from 'native-base';
 import FlatListData from '@Component/ScreenInforView/FlatListData';
 import styles from '@Component/ImageCardView/styles';
 import styless from '@Component/ShowScreen/styles';
-class FlatListItem extends Component {
-  render() {
-    return (
-      <View style={styless.Avatar}>
-        <Image
-          resizeMode="cover"
-          source={this.props.item.Url}
-          style={{ width: '100%', height: '100%' }}
-        />
-      </View>
-    );
+const FlatListItem = ({ item }) => {
+  return (
+    <View style={styless.Avatar}>
+      <Image resizeMode="cover" source={item.Url} style={{ width: '100%', height: '100%' }} />
+    </View>
+  );
+};
+
+const ShowAvatarIcon = () => {
+  let newCount = 0;
+
+  if (FlatListData.length > 5) {
+    newCount = FlatListData.length - 5;
   }
-}
-
-class ShowAvatarIcon extends Component {
-  render() {
-    let newCount = 0;
-
-    if (FlatListData.length > 5) {
-      newCount = FlatListData.length - 5;
-    }
-    const data = FlatListData;
-    for (var i = 0; i < newCount; i++) {
-      data.pop();
-    }
-
-    return (
-      <View
-        style={{
-          paddingTop: 20,
-          flexDirection: 'row',
-        }}>
-        <FlatList
-          horizontal
-          style={{ margin: 5 }}
-          data={FlatListData}
-          renderItem={({ item, index }) => {
-            return <FlatListItem item={item} index={index} />;
-          }}
-        />
-        <Text style={{ paddingTop: 7 }}> + {newCount}</Text>
-      </View>
-    );
+  const data = FlatListData;
+  for (var i = 0; i < newCount; i++) {
+    data.pop();
   }
-}
+
+  return (
+    <View
+      style={{
+        paddingTop: 20,
+        flexDirection: 'row',
+      }}>
+      <FlatList
+        horizontal
+        style={{ margin: 5 }}
+        data={FlatListData}
+        renderItem={({ item, index }) => {
+          return <FlatListItem item={item} index={index} />;
+        }}
+      />
+      <Text style={{ paddingTop: 7 }}> + {newCount}</Text>
+    </View>
+  );
+};
 
 class ShowIconReact extends Component {
   state = {
@@ -105,53 +97,46 @@ class ShowIconReact extends Component {
   }
 }
 
-export class index extends Component {
-  render() {
-    return (
+const index = ({ IMGS, name, day, title, detail }) => {
+  return (
+    <View
+      style={{
+        flexDirection: 'column',
+        marginBottom: 10,
+      }}>
+      <View style={{ paddingTop: 10, flexDirection: 'row' }}>
+        <View style={{ flex: 50, marginTop: -10 }}>
+          <Image source={IMGS} style={styles.lagreImage} />
+        </View>
+        <View style={{ flex: 50 }}>
+          <ScreenInforView name={name} day={day} title={title} detail={detail} />
+        </View>
+      </View>
       <View
         style={{
-          flexDirection: 'column',
-          marginBottom: 10,
+          flexDirection: 'row',
+          justifyContent: 'space-between',
         }}>
-        <View style={{ paddingTop: 10, flexDirection: 'row' }}>
-          <View style={{ flex: 50, marginTop: -10 }}>
-            <Image source={this.props.IMGS} style={styles.lagreImage} />
-          </View>
-          <View style={{ flex: 50 }}>
-            <ScreenInforView
-              name={this.props.name}
-              day={this.props.day}
-              title={this.props.title}
-              detail={this.props.detail}
-            />
-          </View>
+        <View
+          style={{
+            flex: 50,
+            paddingTop: 20,
+            marginLeft: 35,
+          }}>
+          <ShowIconReact />
         </View>
         <View
           style={{
+            flex: 50,
+            paddingBottom: 10,
+            paddingRight: 10,
             flexDirection: 'row',
-            justifyContent: 'space-between',
           }}>
-          <View
-            style={{
-              flex: 50,
-              paddingTop: 20,
-              marginLeft: 35,
-            }}>
-            <ShowIconReact />
-          </View>
-          <View
-            style={{
-              flex: 50,
-              paddingBottom: 10,
-              paddingRight: 10,
-              flexDirection: 'row',
-            }}>
-            <ShowAvatarIcon />
-          </View>
+          <ShowAvatarIcon />
         </View>
       </View>
-    );
-  }
-}
+    </View>
+  );
+};
 
 export default index;
